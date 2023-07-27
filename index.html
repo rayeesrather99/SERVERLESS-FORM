@@ -11,17 +11,136 @@
   
   <div class="form-container">
     <h1>Email Feedback Form</h1>
-    <form action="https://send.pageclip.co/xsSjAaXz5hLDXW1zbUpKQ1AhrjmRcR1A" class="pageclip-form" method="post">
-      <input type="text" name="name" placeholder="Your Name" />
-      <input type="email" name="email" placeholder="yourEmail@something.com" />
-      <input type="password" name="password" id="" placeholder="Password">
+    <form action="https://send.pageclip.co/xsSjAaXz5hLDXW1zbUpKQ1AhrjmRcR1A" class="pageclip-form" method="post" id="feedback-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="yourEmail@something.com" required />
+      <input type="password" name="password" id="" placeholder="Password" required />
       
-      <button type="submit" class="pageclip-form__submit">
+      <button type="submit" class="pageclip-form__submit" name="submit-btn">
         <span>Submit</span>
       </button>
     </form>
   </div>
   
   <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
+  <script>
+    function validateForm(event) {
+      const nameInput = document.querySelector('input[name="name"]');
+      const emailInput = document.querySelector('input[name="email"]');
+      const passwordInput = document.querySelector('input[name="password"]');
+
+      if (nameInput.value.trim() === '') {
+        alert('Please enter your name.');
+        nameInput.focus();
+        return false;
+      }
+
+      if (emailInput.value.trim() === '') {
+        alert('Please enter your email address.');
+        emailInput.focus();
+        return false;
+      } else if (!isValidEmail(emailInput.value.trim())) {
+        alert('Please enter a valid email address.');
+        emailInput.focus();
+        return false;
+      }
+
+      if (passwordInput.value.trim() === '') {
+        alert('Please enter your password.');
+        passwordInput.focus();
+        return false;
+      }
+
+      // Uncomment the line below to allow form submission normally
+      // document.querySelector('.pageclip-form').submit();
+
+      // For demonstration purposes, let's simulate a successful submission.
+      setTimeout(() => {
+        alert('Form submitted successfully!');
+        document.querySelector('.pageclip-form').submit();
+      }, 1000);
+
+      return false;
+    }
+
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+  </script>
+   <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Form</title>
+    <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="form-container">
+    <h1>Email Feedback Form</h1>
+    <form action="https://send.pageclip.co/xsSjAaXz5hLDXW1zbUpKQ1AhrjmRcR1A" class="pageclip-form" method="post" id="feedback-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="yourEmail@something.com" required />
+      <input type="password" name="password" id="" placeholder="Password" required />
+      
+      <button type="submit" class="pageclip-form__submit" name="submit-btn">
+        <span>Submit</span>
+      </button>
+    </form>
+  </div>
+  
+  <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
+  <script>
+    function validateForm(event) {
+      const nameInput = document.querySelector('input[name="name"]');
+      const emailInput = document.querySelector('input[name="email"]');
+      const passwordInput = document.querySelector('input[name="password"]');
+
+      if (nameInput.value.trim() === '') {
+        alert('Please enter your name.');
+        nameInput.focus();
+        return false;
+      }
+
+      if (emailInput.value.trim() === '') {
+        alert('Please enter your email address.');
+        emailInput.focus();
+        return false;
+      } else if (!isValidEmail(emailInput.value.trim())) {
+        alert('Please enter a valid email address.');
+        emailInput.focus();
+        return false;
+      }
+
+      if (passwordInput.value.trim() === '') {
+        alert('Please enter your password.');
+        passwordInput.focus();
+        return false;
+      }
+
+      // Uncomment the line below to allow form submission normally
+      // document.querySelector('.pageclip-form').submit();
+
+      // For demonstration purposes, let's simulate a successful submission.
+      setTimeout(() => {
+        alert('Form submitted successfully!');
+        document.querySelector('.pageclip-form').submit();
+      }, 1000);
+
+      return false;
+    }
+
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+  </script>
+   <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
 </body>
 </html>
