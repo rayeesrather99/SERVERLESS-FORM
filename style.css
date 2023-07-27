@@ -7,7 +7,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    flex-direction: column;
 }
 
 form {
@@ -16,6 +15,12 @@ form {
     border-radius: 4px;
     padding: 20px;
     width: 300px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #5b9bd5;
 }
 
 input {
