@@ -9,12 +9,12 @@ body {
     height: 100vh;
 }
 
-form {
+.form-container {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    padding: 20px;
-    width: 300px;
+    border-radius: 8px;
+    padding: 30px;
+    width: 400px;
 }
 
 h1 {
@@ -24,9 +24,9 @@ h1 {
 }
 
 input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
+    width: calc(100% - 24px); /* Make the input fields fit within the form container */
+    padding: 12px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
@@ -40,7 +40,7 @@ input:focus {
 
 button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: none;
     background-color: #5b9bd5;
     color: #fff;
@@ -48,8 +48,34 @@ button {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
 }
 
 button:hover {
     background-color: #1f6eb2;
+}
+
+button span {
+    transition: transform 0.3s ease-in-out;
+}
+
+button:hover span {
+    transform: translateY(-100%);
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+button:hover::before {
+    transform: translateX(0);
 }

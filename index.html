@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Clip Test</title>
+    <title>Interactive Form</title>
     <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
   
-  <form action="https://send.pageclip.co/xsSjAaXz5hLDXW1zbUpKQ1AhrjmRcR1A" class="pageclip-form" method="post">
+  <div class="form-container">
     <h1>Email Feedback Form</h1>
-    <input type="text" name="name" placeholder="Your Name" />
-    <input type="email" name="email" placeholder="yourEmail@something.com" />
-    <input type="password" name="password" id="" placeholder="Password">
-    
-    <button type="submit" class="pageclip-form__submit">
-      Submit
-    </button>
-  </form>
+    <form action="https://send.pageclip.co/xsSjAaXz5hLDXW1zbUpKQ1AhrjmRcR1A" class="pageclip-form" method="post">
+      <input type="text" name="name" placeholder="Your Name" />
+      <input type="email" name="email" placeholder="yourEmail@something.com" />
+      <input type="password" name="password" id="" placeholder="Password">
+      
+      <button type="submit" class="pageclip-form__submit">
+        <span>Submit</span>
+      </button>
+    </form>
+  </div>
+  
   <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
 </body>
 </html>
